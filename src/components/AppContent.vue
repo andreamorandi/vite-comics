@@ -18,7 +18,7 @@
 .content {
     background-color: lighten(black, 10%);
     .container {
-        height: 6rem;
+        height: 7rem;
         @include flex-center("vertical");
         p {
             font-size: 1.2rem;

@@ -90,8 +90,6 @@
 @use "../styles/partials/variables" as *;
 
 header {
-    // debug
-    background-color: grey;
     .container {
         height: 6rem;
         @include flex();
