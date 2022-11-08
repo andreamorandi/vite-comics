@@ -68,16 +68,20 @@
 
 <template>
     <header>
-        <div class="logo">
-            <img :src="getImagePath(logo)" alt="">
+        <div class="container">
+            <div class="logo">
+                <a href="/comics">
+                    <img :src="getImagePath(logo)" alt="">
+                </a>
+            </div>
+            <nav class="header-navigation">
+                <ul>
+                    <li v-for="(link, index) in links" :key="index">
+                        <a :class="{ 'active': link.active }" :href="link.href"><span>{{ link.title }}</span></a>
+                    </li>
+                </ul>
+            </nav>
         </div>
-        <nav class="header-navigation">
-            <ul>
-                <li v-for="(link, index) in links" :key="index">
-                    <a :class="{ 'active': link.active }" :href="link.href">{{ link.title }}</a>
-                </li>
-            </ul>
-        </nav>
     </header>
 </template>
 
@@ -88,33 +92,40 @@
 header {
     // debug
     background-color: grey;
-
-    height: 6rem;
-    @include flex();
-    .logo {
-        width: 20%;
-        height: 100%;
-        @include flex(row, center, center);
-        img {
-            height: 80%;
-        }
-    }
-    .header-navigation {
-        width: 65%;
-        height: 100%;
-        ul {
+    .container {
+        height: 6rem;
+        @include flex();
+        .logo {
             height: 100%;
-            @include flex();
-            padding-right: 15%;
-        }
-        li {
-        // debug
-        border-bottom: 5px solid $primary-color;
-
-        height: 100%;
-        @include flex-center();
+            flex-shrink: 0;
             a {
-                font-size: .8rem;
+                height: 100%;
+                @include flex(row, center, center);
+                img {
+                    height: 80%;
+                }
+            }
+        }
+        .header-navigation {
+            height: 100%;
+            ul {
+                height: 100%;
+                @include flex();
+                li {
+                    height: 100%;
+                    a {
+                        height: 100%;
+                        @include flex-center();
+                        font-size: .85rem;
+                        font-weight: 600;
+                        padding: 0rem 1rem;
+                        border-bottom: 5px solid transparent;
+                        &:hover,
+                        &.active {
+                            border-bottom: 5px solid $primary-color;
+                        }
+                    }
+                }
             }
         }
     }
