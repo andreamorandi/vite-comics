@@ -3,26 +3,31 @@
         name: "AppBanner",
         data() {
             return {
-                images: [
+                features: [
                     {
-                        name: "buy-comics-digital-comics.png",
-                        description: "DIGITAL COMICS"
+                        description: "DIGITAL COMICS",
+                        image: "buy-comics-digital-comics.png",
+                        href: "/dc"
                     },
                     {
-                        name: "buy-comics-merchandise.png",
-                        description: "DC MERCHANDISE"
+                        description: "DC MERCHANDISE",
+                        image: "buy-comics-merchandise.png",
+                        href: "/merchandise"
                     },
                     {
-                        name: "buy-comics-subscriptions.png",
-                        description: "SUBSCRIPTION"
+                        description: "SUBSCRIPTION",
+                        image: "buy-comics-subscriptions.png",
+                        href: "/subscriptions"
                     },
                     {
-                        name: "buy-comics-shop-locator.png",
-                        description: "COMIC SHOP LOCATOR"
+                        description: "COMIC SHOP LOCATOR",
+                        image: "buy-comics-shop-locator.png",
+                        href: "/locator"
                     },
                     {
-                        name: "buy-dc-power-visa.svg",
-                        description: "DC POWER VISA"
+                        description: "DC POWER VISA",
+                        image: "buy-dc-power-visa.svg",
+                        href: "/visa"
                     },
                 ],
             };
@@ -39,9 +44,11 @@
     <div class="banner">
         <div class="container">
             <div class="row">
-                <div class="col" v-for="(image, index) in images" :key="index">
-                    <img :src="getImagePath(image.name)" :alt="`${image.description} IMAGE`">
-                    <span class="image-description">{{ image.description }}</span>
+                <div class="col" v-for="(feature, index) in features" :key="index">
+                    <a :href="feature.href">
+                        <img :src="getImagePath(feature.image)" :alt="`${feature.description} IMAGE`">
+                        <span class="image-description">{{ feature.description }}</span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -62,16 +69,22 @@
             gap: 1rem;
             .col {
                 width: calc(100% / 5 - 1rem * 4 / 5);
-                @include flex-center();
-                gap: .5rem;
                 padding: 2.5rem 0;
-                img {
-                    width: 45px;
-                }
-                .image-description {
-                    font-size: .9rem;
-                    color: white;
-                    
+                a {
+                    @include flex-center();
+                    gap: .5rem;
+                    transition: transform .25s;
+                    img {
+                        width: 45px;
+                    }
+                    .image-description {
+                        font-size: .9rem;
+                        color: white;
+                        
+                    }
+                    &:hover {
+                        transform: scale(1.25);
+                    }
                 }
             }
             .col:nth-child(4) img {

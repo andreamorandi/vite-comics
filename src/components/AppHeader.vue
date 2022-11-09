@@ -117,6 +117,7 @@ header {
                         font-size: .85rem;
                         font-weight: 600;
                         padding: 0rem 1rem;
+                        padding-top: 5px;
                         border-bottom: 5px solid transparent;
                         &:hover,
                         &.active {
