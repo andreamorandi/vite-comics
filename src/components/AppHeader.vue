@@ -71,7 +71,7 @@
         <div class="container">
             <div class="logo">
                 <a href="/comics">
-                    <img :src="getImagePath(logo)" alt="">
+                    <img :src="getImagePath(logo)" alt="logo">
                 </a>
             </div>
             <nav class="header-navigation">

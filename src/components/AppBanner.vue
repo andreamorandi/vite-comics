@@ -55,7 +55,6 @@
 .banner {
     background-color: $primary-color;
     .container {
-        height: 8rem;
         .row {
             width: 100%;
             height: 100%;
@@ -65,6 +64,7 @@
                 width: calc(100% / 5 - 1rem * 4 / 5);
                 @include flex-center();
                 gap: .5rem;
+                padding: 2.5rem 0;
                 img {
                     width: 45px;
                 }
