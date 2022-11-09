@@ -10,8 +10,8 @@ export default {
     AppMain,
     AppBanner,
     AppFooter
-  }
-}
+  },
+};
 </script>
 
 <template>

@@ -1,14 +1,20 @@
 <script>
-    export default {
-        name: "AppContent"
-    }
+import ComicsJumbotron from "./ComicsJumbotron.vue";
+import ComicsList from "./ComicsList.vue";
+
+export default {
+    name: "AppContent",
+    components: {
+        ComicsJumbotron,
+        ComicsList
+    },
+};
 </script>
 
 <template>
     <main>
-        <div class="container">
-            <p>--> Content goes here &lt--</p>
-        </div>
+        <ComicsJumbotron />
+        <ComicsList />
     </main>
 </template>
 

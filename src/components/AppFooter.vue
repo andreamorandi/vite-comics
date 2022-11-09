@@ -259,8 +259,8 @@ footer {
             @include flex();
             .sign-up {
                 a {
-                    padding: .5rem;
-                    font-weight: 700;
+                    padding: .75rem 1rem;
+                    font-weight: 600;
                     border: 2px solid $primary-color;
                     color: white;
                     &:hover {
@@ -276,7 +276,7 @@ footer {
                 }
                 span {
                     font-size: 1.25rem;
-                    font-weight: 700;
+                    font-weight: 600;
                     margin-right: .5rem;
                     color: $primary-color;
                 }
